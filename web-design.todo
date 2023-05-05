@@ -1,0 +1,27 @@
+Front office :
+    Home:
+        Front:
+            ☐ Présentation du site
+            ☐ Guide du site
+            ☐ Recherche
+        Back:
+            ☐ Présentation du site
+            ☐ Guide du site
+            ☐ Recherche
+    Catégories:
+        ☐ Liste des catégories
+        Quoi:
+            ☐ Liste des articles par catégorie pagination de 10
+        Pourquoi:
+            ☐ Liste des articles par catégorie pagination de 10
+        Comment:
+            ☐ Liste des articles par catégorie pagination de 10
+        Conclusion:
+            ☐ Liste des articles par catégorie pagination de 10
+        Nouveauté:
+            ☐ Liste des articles par catégorie pagination de 10
+    Affichage des articles:
+        ☐ Générer le head
+        ☐ Générer le body
+        ☐ Générer le footer
+        ☐ Générer le header
