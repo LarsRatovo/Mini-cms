@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Paragraph extends Model
 {
     use HasFactory;
-    protected $table='categories';
+    protected $table='paragraphs';
     public $timestamps=false;
     public $fillable=[
-        'name'
+        'article',
+        'text'
     ];
-    public function articles(){
-        return $this->hasMany(Article::class,'category');
-    }
 }

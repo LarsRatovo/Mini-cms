@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class GlobalSite extends Model
 {
     use HasFactory;
-    protected $table='articles';
+    protected $table='global';
+    public $incrementing=false;
     protected $timstamps=false;
     public $fillable=[
-        'category',
-        'date',
+        'title',
         'snippet'
     ];
-    public function paragraphs(){
-        return $this->hasMany(Paragraph::class,'article');
-    }
 }
