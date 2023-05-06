@@ -2,9 +2,6 @@ export default function Category({category}){
     return (
         <>
             <Head title={category.name}/>
-            <Head>
-                <meta name="description" content={category.name}/>
-            </Head>
             <h1>{category.name}</h1>
             {category.articles.data.map(article=>{
                 return (
