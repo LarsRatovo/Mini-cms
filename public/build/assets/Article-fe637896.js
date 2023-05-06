@@ -1,1 +1,0 @@
-import{j as n,F as i,a as e}from"./app-1c8476f1.js";function s({article:r}){return n(i,{children:[e("h1",{children:r.title}),e("h2",{children:r.snippet}),r.paragraphs.map(t=>n(i,{children:[e("h3",{children:t.title}),e("p",{children:t.text})]}))]})}export{s as default};

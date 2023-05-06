@@ -1,6 +1,6 @@
 {
   "resources/js/Pages/Article.jsx": {
-    "file": "assets/Article-fe637896.js",
+    "file": "assets/Article-373a0f87.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -8,7 +8,7 @@
     "src": "resources/js/Pages/Article.jsx"
   },
   "resources/js/Pages/Category.jsx": {
-    "file": "assets/Category-d0c98a14.js",
+    "file": "assets/Category-7ad92d3f.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -16,7 +16,7 @@
     "src": "resources/js/Pages/Category.jsx"
   },
   "resources/js/Pages/Test.jsx": {
-    "file": "assets/Test-b675443a.js",
+    "file": "assets/Test-b2316d6c.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -36,7 +36,7 @@
       "resources/js/Pages/Category.jsx",
       "resources/js/Pages/Test.jsx"
     ],
-    "file": "assets/app-1c8476f1.js",
+    "file": "assets/app-88ffccdc.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   }
