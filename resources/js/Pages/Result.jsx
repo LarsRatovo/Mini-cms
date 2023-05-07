@@ -62,8 +62,11 @@ export default function Result({global,categories,results,keyword}){
                             )}
                             <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                 <div className="btn-group me-2" role="group">
-                                    {results.links.map(link=>
-                                        <button type="button" disabled={!link.active} className="btn btn-info"><a href={link.url}>{decodeHtml(link.label)}</a></button>
+                                    {results.links.map((link)=>{
+                                            if(link.active){
+                                                return <button type="button" className="btn btn-info"><a href={link.url}>{decodeHtml(link.label)}</a></button>
+                                            }
+                                        }
                                     )}
                                 </div>
                             </div>
