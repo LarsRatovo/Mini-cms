@@ -55,3 +55,4 @@ INSERT INTO paragraphs(article, image, title, "text")
 VALUES (3, 'realmadrid_1.jpg', 'Goals by Ronaldo and Benzema', 'Ronaldo scored the first goal in the 27th minute, followed by a goal from Benzema in the 63rd minute.');
 INSERT INTO paragraphs(article, image, title, "text")
 VALUES (3, 'realmadrid_2.jpg', 'Tactical brilliance by the coach', 'Real Madrid''s coach made some brilliant tactical decisions that helped them secure the victory.');
+INSERT INTO global VALUES('BlogIA','Blog à propos d'' IA');

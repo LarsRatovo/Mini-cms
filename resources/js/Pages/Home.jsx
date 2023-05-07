@@ -33,7 +33,7 @@ export default function Home({ global, categories, cats }) {
                                         <div class="col-lg-4">
                                             <a href={"/articles/"+article.id}>
                                             <h3>{article.title}</h3>
-                                            <img src={"assets/img/"+article.image} className="img-fluid rounded-4 mb-4" alt={article.name} />
+                                            <img src={"assets/img/"+article.image} className="img-fluid rounded-4 mb-4" alt={article.title} />
                                             <strong>{article.snippet}</strong>
                                             </a>
                                         </div>
