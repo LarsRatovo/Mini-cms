@@ -21,7 +21,7 @@ export default function Navbar({global,categories,children}){
       </a>
       <nav id="navbar" className="navbar">
         <ul>
-          <li id="0"><a href="/">Accueil</a></li>
+          <li id="0" style={{color:'white'}}><a href="/">Accueil</a></li>
           {categories.map(category=>
               <li><a href={"/category/"+category.id}>{category.name}</a></li>
             )}
