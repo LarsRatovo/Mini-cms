@@ -137,7 +137,7 @@ section {
 }
 
 .breadcrumbs nav ol a {
-  color: var(--color-primary);
+  color: #041404;
   transition: 0.3s;
 }
 
