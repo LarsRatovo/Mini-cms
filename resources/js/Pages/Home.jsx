@@ -16,7 +16,7 @@ export default function Home({ global, categories, cats }) {
                         <h2>{global.snippet}</h2>
                         </div>
                         <div className="col-lg-6 order-1 order-lg-2">
-                        <img src="assets/img/ai.png" className="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100"/>
+                        <img src="assets/img/ai.png" className="img-fluid" alt="" width={800}/>
                         </div>
                     </div>
                     </div>
@@ -33,7 +33,7 @@ export default function Home({ global, categories, cats }) {
                                         <div class="col-lg-4">
                                             <a href={"/articles/"+article.id}>
                                             <h3>{article.title}</h3>
-                                            <img src={"assets/img/"+article.image} className="img-fluid rounded-4 mb-4" alt={article.title} />
+                                            <img src={"assets/img/"+article.image} className="img-fluid rounded-4 mb-4" width={400} alt={article.title} />
                                             <strong>{article.snippet}</strong>
                                             </a>
                                         </div>
