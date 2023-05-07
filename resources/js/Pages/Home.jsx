@@ -1,0 +1,49 @@
+import Navbar from "@/Layouts/Navbar";
+import { Head } from "@inertiajs/react";
+
+export default function Home({ global, categories, cats }) {
+    return (
+        <>
+            <Head>
+                <title>{global.title}</title>
+                <meta name="description" content={global.snippet} />
+            </Head>
+            <Navbar global={global} categories={categories}>
+                <section id="hero" className="hero">
+                    <div className="container position-relative">
+                    <div className="row gy-5" data-aos="fade-in">
+                        <div className="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+                        <h2>{global.snippet}</h2>
+                        </div>
+                        <div className="col-lg-6 order-1 order-lg-2">
+                        <img src="assets/img/ai.png" className="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100"/>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+                <div class="container">
+                    {cats.map((cat) => {
+                        return (
+                            <>
+                                <div class="section-header">
+                                    <h2><a href={"/category/"+cat.id}>{cat.name}</a></h2>
+                                </div>
+                                <div class="row">
+                                    {cat.articles.map(article=>
+                                        <div class="col-lg-4">
+                                            <a href={"/articles/"+article.id}>
+                                            <h3>{article.title}</h3>
+                                            <img src={"assets/img/"+article.image} className="img-fluid rounded-4 mb-4" alt={article.name} />
+                                            <strong>{article.snippet}</strong>
+                                            </a>
+                                        </div>
+                                    )}
+                                </div>
+                            </>
+                        );
+                    })}
+                </div>
+            </Navbar>
+        </>
+    );
+}

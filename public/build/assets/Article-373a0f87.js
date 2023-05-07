@@ -1,1 +1,0 @@
-import{j as n,F as r,a as s,b as e}from"./app-88ffccdc.js";function d({article:t}){return n(r,{children:[n(s,{children:[e("title",{children:t.title}),e("meta",{name:"description",content:t.snippet})]}),e("h1",{children:t.title}),e("h2",{children:t.snippet}),t.paragraphs.map(i=>n(r,{children:[e("h3",{children:i.title}),e("p",{children:i.text})]}))]})}export{d as default};

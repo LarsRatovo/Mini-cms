@@ -1,6 +1,7 @@
 import Navbar from "@/Layouts/Navbar";
 import { Head } from "@inertiajs/react";
-export default function Category({ global, categories, category }) {
+
+export default function Result({global,categories,results,keyword}){
     const format=(date)=>{
         let str=new Date(date);
         return str.toLocaleDateString();
@@ -13,16 +14,16 @@ export default function Category({ global, categories, category }) {
     return (
         <>
             <Head>
-                <title>{category.name}</title>
-                <meta name="description" content={global.title+"-"+category.name} />
+                <title>{"Results of "+keyword}</title>
+                <meta name="description" content={"Result of search about "+{keyword}} />
             </Head>
-            <Navbar global={global} categories={categories}>
-                <div className="breadcrumbs">
+            <Navbar categories={categories} global={global}>
+            <div className="breadcrumbs">
                     <div className="page-header d-flex align-items-center">
                         <div className="container position-relative">
                             <div className="row d-flex justify-content-center">
                                 <div className="col-lg-6 text-center">
-                                    <h2>{category.name}</h2>
+                                    <h2>{"Resultat de la recherche de "+keyword}</h2>
                                 </div>
                             </div>
                         </div>
@@ -31,15 +32,15 @@ export default function Category({ global, categories, category }) {
                         <div className="container">
                             <ol>
                                 <li><a href="/">Accueil</a></li>
-                                <li>{category.name}</li>
+                                <li>{"Resultat de "+keyword}</li>
                             </ol>
                         </div>
                     </nav>
                 </div>
                 <section id="blog" className="blog">
-                    <div className="container" data-aos="fade-up">
+                    <div className="container">
                         <div className="row gy-4 posts-list">
-                            {category.articles.data.map(article=>
+                            {results.data.map(article=>
                                 <div className="col-xl-4 col-md-6">
                                     <article>
                                         <div className="post-img">
@@ -61,7 +62,7 @@ export default function Category({ global, categories, category }) {
                             )}
                             <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                                 <div className="btn-group me-2" role="group">
-                                    {category.articles.links.map(link=>
+                                    {results.links.map(link=>
                                         <button type="button" disabled={!link.active} className="btn btn-info"><a href={link.url}>{decodeHtml(link.label)}</a></button>
                                     )}
                                 </div>

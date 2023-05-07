@@ -11,14 +11,16 @@ use Inertia\Inertia;
 class GlobalSiteController extends Controller
 {
     function getGlobal(){
+        $cats=Category::all();
         $global=GlobalSite::all()->first();
-        $category=Category::all();
-        foreach ($category as $cat) {
-            $cat->post=Article::where('category','=',$cat->id)->orderBy('date','desc')->get()->first();
+        $categories=Category::all();
+        foreach ($cats as $cat) {
+            $cat->articles=$cat->articles()->take(3)->get();
         }
-        return Inertia::render('Test',[
+        return Inertia::render('Home',[
+            'cats'=>$cats,
             'global'=>$global,
-            'categories'=>$category
+            'categories'=>$categories
         ]);
     }
 }

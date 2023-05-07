@@ -18,6 +18,7 @@ use Inertia\Inertia;
 
 Route::get('/',[App\Http\Controllers\GlobalSiteController::class,'getGlobal']);
 Route::get('/category/{id}',[App\Http\Controllers\CategoryController::class,'getCategory']);
-Route::get('/article/{id}',[App\Http\Controllers\ArticleController::class,'get']);
+Route::get('/search',[App\Http\Controllers\CategoryController::class,'search']);
+Route::get('/articles/{id}',[App\Http\Controllers\ArticleController::class,'get']);
 
 require __DIR__.'/auth.php';
