@@ -9,7 +9,7 @@ export default function Article({articles}){
                     <div className="card col-lg-12">
                         <div className="row g-0">
                             <div className="col-md-4">
-                                <img src={"/assets/img/"+article.image} className="img-fluid rounded-start" alt={article.snippet}/>
+                                <img src={"/assets/img/"+article.image} loading="lazy" className="img-fluid rounded-start" alt={article.snippet}/>
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">

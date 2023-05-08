@@ -43,7 +43,7 @@ export default function Category({ global, categories, category }) {
                                 <div className="col-xl-4 col-md-6">
                                     <article>
                                         <div className="post-img">
-                                            <img src={"/assets/img/"+article.image} alt={article.title} className="img-fluid" width={356} height={237.33}/>
+                                            <img loading="lazy" src={"/assets/img/"+article.image} alt={article.title} className="img-fluid" width={356} height={237.33}/>
                                         </div>
                                         <h3 className="title"><a href={"/articles/"+article.id}>{article.title}</a></h3>
                                         <p>
