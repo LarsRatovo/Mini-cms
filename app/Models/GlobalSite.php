@@ -10,7 +10,7 @@ class GlobalSite extends Model
     use HasFactory;
     protected $table='global';
     public $incrementing=false;
-    protected $timstamps=false;
+    public $timestamps=false;
     public $fillable=[
         'title',
         'snippet'

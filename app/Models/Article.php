@@ -9,11 +9,13 @@ class Article extends Model
 {
     use HasFactory;
     protected $table='articles';
-    protected $timstamps=false;
+    public $timestamps=false;
     public $fillable=[
+        'title',
         'category',
         'date',
-        'snippet'
+        'snippet',
+        'image'
     ];
     public function paragraphs(){
         return $this->hasMany(Paragraph::class,'article');

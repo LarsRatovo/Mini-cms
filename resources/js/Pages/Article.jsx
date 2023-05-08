@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Head } from "@inertiajs/react";
 import Navbar from "@/Layouts/Navbar";
 
@@ -70,7 +69,7 @@ export default function Article({ global,categories,article,count,latest}) {
                                         <div class="mt-3">
                                                 {latest.map(last=>
                                                     <div class="post-item mt-3">
-                                                    <img src={"/assets/img/blog/"+last.image} alt={last.title} width={80} height={53.33} />
+                                                    <img src={"/assets/img/"+last.image} alt={last.title} width={80} height={53.33} />
                                                     <div>
                                                         <h4><a href={"/articles/"+last.id}>{last.title}</a></h4>
                                                             <time datetime={last.date}>{last.date}</time>

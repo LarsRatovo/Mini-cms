@@ -23,4 +23,18 @@ class GlobalSiteController extends Controller
             'categories'=>$categories
         ]);
     }
+    function get(){
+        $global=GlobalSite::all()->first();
+        return Inertia::render('admin/Global',[
+            'global'=>$global
+        ]);
+    }
+    function update(Request $request){
+        GlobalSite::truncate();
+        GlobalSite::create([
+            "title"=>$request->get('title'),
+            "snippet"=>$request->get('snippet')
+        ]);
+       return $this->get();
+    }
 }

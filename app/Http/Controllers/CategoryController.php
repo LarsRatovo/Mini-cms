@@ -22,6 +22,34 @@ class CategoryController extends Controller
             'category'=> $category
         ]);
     }
+    function get(){
+        $categories=DB::table('category_count')->get();
+        return Inertia::render('admin/list/Category',[
+            'categories'=>$categories
+        ]);
+    }
+    function save(Request $request){
+        Category::create([
+            'name'=>$request->get('name')
+        ]);
+        return $this->get();
+    }
+    function delete($id){
+        Category::find($id)->delete();
+        return $this->get();
+    }
+    function getUnique($id){
+        $category=Category::find($id);
+        return Inertia::render('admin/update/Category',[
+            'category'=>$category
+        ]);
+    }
+    function update(Request $request){
+        Category::find($request->get('id'))->update([
+            'name'=>$request->get('name')
+        ]);
+        return $this->get();
+    }
     function search(Request $request){
         $keyword=$request->get('q');
         $keyword="%".$keyword."%";

@@ -12,6 +12,7 @@ class Paragraph extends Model
     public $timestamps=false;
     public $fillable=[
         'article',
+        'title',
         'text'
     ];
 }
