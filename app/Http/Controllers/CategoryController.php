@@ -12,6 +12,7 @@ use Inertia\Inertia;
 class CategoryController extends Controller
 {
     function getCategory($id){
+        $id=explode('-',$id)[0];
         $global=GlobalSite::all()->first();
         $categories=Category::all();
         $category=Category::where('id','=',$id)->first();

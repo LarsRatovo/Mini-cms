@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
@@ -17,6 +18,10 @@ class Article extends Model
         'snippet',
         'image'
     ];
+
+    public function slug(){
+        return Str::slug($this->title);
+    }
     public function paragraphs(){
         return $this->hasMany(Paragraph::class,'article');
     }

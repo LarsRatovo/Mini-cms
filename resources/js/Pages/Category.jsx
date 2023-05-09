@@ -1,5 +1,6 @@
 import Navbar from "@/Layouts/Navbar";
 import { Head } from "@inertiajs/react";
+import slugify from "slugify";
 export default function Category({ global, categories, category }) {
     const format=(date)=>{
         let str=new Date(date);
@@ -45,7 +46,7 @@ export default function Category({ global, categories, category }) {
                                         <div className="post-img">
                                             <img loading="lazy" src={"/assets/img/"+article.image} alt={article.title} className="img-fluid" width={356} height={237.33}/>
                                         </div>
-                                        <h3 className="title"><a href={"/articles/"+article.id}>{article.title}</a></h3>
+                                        <h3 className="title"><a href={"/articles/"+article.id+"-"+slugify(article.title)}>{article.title}</a></h3>
                                         <p>
                                             {article.snippet}
                                         </p>

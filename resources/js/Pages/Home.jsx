@@ -1,5 +1,6 @@
 import Navbar from "@/Layouts/Navbar";
 import { Head } from "@inertiajs/react";
+import slugify from "slugify";
 
 export default function Home({ global, categories, cats }) {
     return (
@@ -26,12 +27,12 @@ export default function Home({ global, categories, cats }) {
                         return (
                             <>
                                 <div class="section-header">
-                                    <h2><a href={"/category/"+cat.id}>{cat.name}</a></h2>
+                                    <h2><a href={"/category/"+cat.id+"-"+slugify(cat.name)}>{cat.name}</a></h2>
                                 </div>
                                 <div class="row">
                                     {cat.articles.map(article=>
                                         <div class="col-lg-4">
-                                            <a href={"/articles/"+article.id}>
+                                            <a href={"/articles/"+article.id+"-"+slugify(article.title)}>
                                             <h3>{article.title}</h3>
                                             <img src={"assets/img/"+article.image} loading="lazy" className="img-fluid rounded-4 mb-4" width={356} height={237.33} alt={article.title} />
                                             <strong>{article.snippet}</strong>

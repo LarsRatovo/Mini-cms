@@ -11,10 +11,12 @@ use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use App\Models\GlobalSite;
 use App\Models\Category;
+use Spatie\ImageOptimizer\Image;
 
 class ArticleController extends Controller
 {
     public function get($id){
+        $id=explode('-',$id)[0];
         $article=Article::where('id','=',$id)->first();
         $article->paragraphs;
         $global=GlobalSite::all()->first();

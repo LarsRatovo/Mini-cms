@@ -1,5 +1,6 @@
 import { Head } from "@inertiajs/react";
 import Navbar from "@/Layouts/Navbar";
+import slugify from "slugify";
 
 export default function Article({ global,categories,article,count,latest}) {
     return (
@@ -59,7 +60,7 @@ export default function Article({ global,categories,article,count,latest}) {
                                         <h3 class="sidebar-title">Catégories</h3>
                                         <ul class="mt-3">
                                             {count.map(cat=>
-                                                <li><a href={"/category/"+cat.id}>{cat.name}<span>({cat.count})</span></a></li>
+                                                <li><a href={"/category/"+cat.id+"-"+slugify(cat.name)}>{cat.name}<span>({cat.count})</span></a></li>
                                             )}
                                         </ul>
                                     </div>
@@ -71,7 +72,7 @@ export default function Article({ global,categories,article,count,latest}) {
                                                     <div class="post-item mt-3">
                                                     <img src={"/assets/img/"+last.image} loading="lazy" alt={last.title} width={80} height={53.33} />
                                                     <div>
-                                                        <h4><a href={"/articles/"+last.id}>{last.title}</a></h4>
+                                                        <h4><a href={"/articles/"+last.id+"-"+slugify(last.title)}>{last.title}</a></h4>
                                                             <time datetime={last.date}>{last.date}</time>
                                                         </div>
                                                     </div>

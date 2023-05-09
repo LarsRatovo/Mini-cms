@@ -1,5 +1,6 @@
 import Navbar from "@/Layouts/Navbar";
 import { Head } from "@inertiajs/react";
+import slugify from "slugify";
 
 export default function Result({global,categories,results,keyword}){
     const format=(date)=>{
@@ -46,7 +47,7 @@ export default function Result({global,categories,results,keyword}){
                                         <div className="post-img">
                                             <img loading="lazy" src={"/assets/img/blog/"+article.image} alt={article.title} className="img-fluid" width={356} height={237.33} />
                                         </div>
-                                        <h3 className="title"><a href={"/articles/"+article.id}>{article.title}</a></h3>
+                                        <h3 className="title"><a href={"/articles/"+article.id+"-"+slugify(article.title)}>{article.title}</a></h3>
                                         <p>
                                             {article.snippet}
                                         </p>

@@ -1,4 +1,5 @@
 import { Head } from "@inertiajs/react";
+import slugify from "slugify";
 
 export default function Navbar({global,categories,children}){
     return (
@@ -23,7 +24,7 @@ export default function Navbar({global,categories,children}){
         <ul>
           <li id="0" style={{color:'white'}}><a href="/">Accueil</a></li>
           {categories.map(category=>
-              <li><a href={"/category/"+category.id}>{category.name}</a></li>
+              <li><a href={"/category/"+category.id+"-"+slugify(category.name)}>{category.name}</a></li>
             )}
         </ul>
       </nav>
