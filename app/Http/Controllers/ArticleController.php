@@ -49,7 +49,7 @@ class ArticleController extends Controller
         $category=$request->get('category');
         $ptitle=$request->get('ptitle');
         $ptext=$request->get('ptext');
-        Storage::disk('public')->put("/img/".$image_name,$request->file('image'));
+        Storage::disk('public')->putFileAs("/img/",$request->file('image'),$image_name);
         $data=[
             'title'=>$title,
             'snippet'=>$snippet,
@@ -99,7 +99,7 @@ class ArticleController extends Controller
         $snippet=$request->get('snippet');
         $image_name=$original->image;
         if($request->hasFile('image')){
-            Storage::disk('public')->put("/img/".$image_name,$request->file('image'));
+            Storage::disk('public')->putFileAs("/img/",$request->file('image'),$image_name);
         }
         $category=$request->get('category');
         $ptitle=$request->get('ptitle');
