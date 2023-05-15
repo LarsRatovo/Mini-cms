@@ -49,7 +49,6 @@ class ArticleController extends Controller
         $category=$request->get('category');
         $ptitle=$request->get('ptitle');
         $ptext=$request->get('ptext');
-        $request->file('image')->move(public_path('assets/img'),$image_name);
         Storage::disk('public')->put("/img/".$image_name,$request->file('image'));
         $data=[
             'title'=>$title,
