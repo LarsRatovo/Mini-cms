@@ -21,7 +21,7 @@ export default function Article({ global,categories,article,count,latest}) {
                                 <article class="blog-details">
 
                                     <div class="post-img">
-                                        <img src={"/assets/img/"+article.image} loading="lazy" alt={article.title} class="img-fluid" width={728} height={485.33}/>
+                                        <img src={"/storage/img/"+article.image} loading="lazy" alt={article.title} class="img-fluid" width={728} height={485.33}/>
                                     </div>
 
                                     <h2 class="title">{article.title}</h2>
@@ -70,7 +70,7 @@ export default function Article({ global,categories,article,count,latest}) {
                                         <div class="mt-3">
                                                 {latest.map(last=>
                                                     <div class="post-item mt-3">
-                                                    <img src={"/assets/img/"+last.image} loading="lazy" alt={last.title} width={80} height={53.33} />
+                                                    <img src={"/storage/img/"+last.image} loading="lazy" alt={last.title} width={80} height={53.33} />
                                                     <div>
                                                         <h4><a href={"/articles/"+last.id+"-"+slugify(last.title)}>{last.title}</a></h4>
                                                             <time datetime={last.date}>{last.date}</time>

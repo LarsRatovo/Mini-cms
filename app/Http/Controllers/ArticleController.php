@@ -6,6 +6,7 @@ use App\Models\Paragraph;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
@@ -49,6 +50,7 @@ class ArticleController extends Controller
         $ptitle=$request->get('ptitle');
         $ptext=$request->get('ptext');
         $request->file('image')->move(public_path('assets/img'),$image_name);
+        Storage::disk('public')->put("/img/".$image_name,$request->file('image'));
         $data=[
             'title'=>$title,
             'snippet'=>$snippet,
@@ -98,7 +100,7 @@ class ArticleController extends Controller
         $snippet=$request->get('snippet');
         $image_name=$original->image;
         if($request->hasFile('image')){
-            $request->file('image')->move(public_path('assets/img'),$image_name);
+            Storage::disk('public')->put("/img/".$image_name,$request->file('image'));
         }
         $category=$request->get('category');
         $ptitle=$request->get('ptitle');

@@ -17,7 +17,7 @@ export default function Home({ global, categories, cats }) {
                         <h2>{global.snippet}</h2>
                         </div>
                         <div className="col-lg-6 order-1 order-lg-2">
-                        <img loading="lazy" src="assets/img/ai.png" className="img-fluid" alt="" width={546} height={364}/>
+                        <img loading="lazy" src="storage/img/ai.png" className="img-fluid" alt="" width={546} height={364}/>
                         </div>
                     </div>
                     </div>
@@ -34,7 +34,7 @@ export default function Home({ global, categories, cats }) {
                                         <div class="col-lg-4">
                                             <a href={"/articles/"+article.id+"-"+slugify(article.title)}>
                                             <h3>{article.title}</h3>
-                                            <img src={"assets/img/"+article.image} loading="lazy" className="img-fluid rounded-4 mb-4" width={356} height={237.33} alt={article.title} />
+                                            <img src={"storage/img/"+article.image} loading="lazy" className="img-fluid rounded-4 mb-4" width={356} height={237.33} alt={article.title} />
                                             <strong>{article.snippet}</strong>
                                             </a>
                                         </div>
